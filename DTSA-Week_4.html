@@ -14594,7 +14594,7 @@ Nixon, A. (2020, August 28). Building a movie content based recommender using tf
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
@@ -14837,7 +14837,7 @@ None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_topWords</span> <span class="o">=</span> <span class="mi">20</span>
@@ -14986,7 +14986,7 @@ jp-needs-light-background
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Helper functions</span>
@@ -15076,7 +15076,7 @@ jp-needs-light-background
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">topicDict</span> <span class="o">=</span> <span class="n">makeLabelDict</span><span class="p">(</span><span class="n">topics</span><span class="p">)</span>
@@ -15158,7 +15158,7 @@ people mobile said technology phone software users digital use internet computer
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test the model fitted above</span>
@@ -15328,7 +15328,7 @@ Highest accuracy was: 0.9503355704697987 with kullback-leibler, mu and alpha: 9e
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracting tf-idf features for NMF...&quot;</span><span class="p">)</span>
@@ -15378,9 +15378,9 @@ Got accuracy of: 0.9530201342281879
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Step-3:-Compare-with-Supervised-Learning">Step 3: Compare with Supervised Learning<a class="anchor-link" href="#Step-3:-Compare-with-Supervised-Learning">&#182;</a></h3><p>I chose the K_Means supervised model as I thought comparing the an unsupervised clustering model to a supervised one would be interesting.  At first I chose a test size of the training data of .2, and got accuracies on the train/test split of the training data or approx. 0.8280 and 0.8758 respectively (yes, accuracy on the test split was higher).</p>
-<p>Then I tried changing the test_size several time manually ad a value of .25 gave the best results with the train/test split at approx. 0.9230 and 0.9544 (again, accuracy was higher on the test data). Interestingly, even changing the test size to .26 would cause a siginificant drop (0.9192 and 0.9459), indicating that the supervised algorithm is highly dependent of the split of the data (and therefore also what the initial random split is).</p>
-<p>Given the susceptibility of the supervised learning method to test train split and not being able to achieve as high accuracy score as the unsupervised model, even though the two techniques share similar memory fottprint (as both are a essentially reduce complexity being non-paramertized models), I would choose the NMF as it gave the most stable results.</p>
+<h3 id="Step-3:-Compare-with-Supervised-Learning">Step 3: Compare with Supervised Learning<a class="anchor-link" href="#Step-3:-Compare-with-Supervised-Learning">&#182;</a></h3><p>I decided to try two different models, Random Forest and K-Means as the supervised methods to try compare against. To my suprise I was able to get a <strong>perfect</strong> classifier on the training data using Random Forest with a much smaller number of features without the testing accuracy decreasing as all in comparison to the NMF model. I reduced the the number of features from 1,000 to only 200 and the accuracy on the testing data still $\approx$ 0.9530. If the number of features remained the same at 1,000, then the testing accuracy was even higher than NMF at $\approx$ 0.9664!</p>
+<p>With the success of the Random Forest, I wanted to see how K-Means would compare using the same inputs so no changes were made to enable an "apples to apples' comparison. K-Means was a relative diappointment though with this technique as accuracy on the training/testing data dropped to $\approx$ 0.8020 and 0.8456 respectively.</p>
+<p>As the Random Forest classifier just a well as NMF using a much smaller feature set, it would be difficult to choose NMF in this use case.  However, if the data set was <em>much</em> larger it might be not be possible to use a Random Forest classifier due to memory resrtictions, so the a feature reducing model such as NMF might be needed.</p>
 
 </div>
 </div>
@@ -15390,11 +15390,11 @@ Got accuracy of: 0.9530201342281879
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">import</span> <span class="nn">sklearn.metrics</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 </pre></div>
 
@@ -15408,39 +15408,38 @@ Got accuracy of: 0.9530201342281879
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">Category</span><span class="o">.</span><span class="n">values</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">df_train</span><span class="o">.</span><span class="n">Category</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">Category</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">Category</span><span class="o">.</span><span class="n">values</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">Text</span><span class="o">.</span><span class="n">values</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">.26</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">randomState</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">randomState</span><span class="p">)</span>
 
-<span class="c1"># Create a new vectorizer for training the supervised model</span>
-<span class="n">tfidf_vectorizerSup</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">max_df</span> <span class="o">=</span> <span class="mf">0.37</span><span class="p">,</span> <span class="n">min_df</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">max_features</span> <span class="o">=</span> <span class="n">n_maxFeatures</span><span class="p">,</span> <span class="n">stop_words</span> <span class="o">=</span> <span class="s2">&quot;english&quot;</span><span class="p">)</span>
+<span class="c1"># Create a new vectorizer for training the supervised models</span>
+<span class="n">tfidf_vectorizerSup</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">max_df</span> <span class="o">=</span> <span class="mf">0.37</span><span class="p">,</span> <span class="n">min_df</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">max_features</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">stop_words</span> <span class="o">=</span> <span class="s2">&quot;english&quot;</span><span class="p">)</span>
 
-<span class="c1"># Fit a TF-IDF model and transform the training data into the matrix for input to k-Means</span>
+<span class="c1"># Fit a TF-IDF model and transform the training data into the matrix for input supervised models</span>
 <span class="n">tfidf_trainSup</span> <span class="o">=</span> <span class="n">tfidf_vectorizerSup</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 
-<span class="c1"># Create the K-Means model</span>
-<span class="n">kmeansModel</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="n">n_topics</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">randomState</span><span class="p">)</span>
-
-<span class="c1"># Fit the model and predict the categories on the training TF-IDF matrix</span>
-<span class="n">y_hatTrainSup</span> <span class="o">=</span> <span class="n">kmeansModel</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">tfidf_trainSup</span><span class="p">)</span>
-
-<span class="c1"># Determine best label order</span>
-<span class="n">labelOrder</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="n">label_permute_compare</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_hatTrainSup</span><span class="p">,</span> <span class="n">topicDict</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">labelOrder</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
+<span class="c1"># Create the Random Forest model</span>
+<span class="n">rfModel</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">tfidf_trainSup</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix on Training Data - A Perfect Score!:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">rfModel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tfidf_trainSup</span><span class="p">)))</span>
 
 <span class="c1"># ONLY transform the test data (do not fit)</span>
 <span class="n">tfidf_testSup</span> <span class="o">=</span> <span class="n">tfidf_vectorizerSup</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="c1"># Only predict on the test data (do not fit)</span>
-<span class="n">y_hatTestSup</span> <span class="o">=</span> <span class="n">kmeansModel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tfidf_testSup</span><span class="p">)</span>
-<span class="n">predTestSup</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">y_hatTestSup</span><span class="p">:</span>
-    <span class="n">predTestSup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">topicDict</span><span class="p">[</span><span class="n">labelOrder</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy on test data: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predTestSup</span><span class="p">)))</span>
+<span class="n">y_predRF</span> <span class="o">=</span> <span class="n">rfModel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tfidf_testSup</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Metrics on Test Data using Random Forest:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predRF</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precision: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predRF</span><span class="p">,</span> <span class="n">pos_label</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s2">&quot;macro&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recall: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predRF</span><span class="p">,</span> <span class="n">pos_label</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s2">&quot;macro&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F1 score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predRF</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s2">&quot;macro&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Confusion Matrix on Test Data:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predRF</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15462,8 +15461,99 @@ Got accuracy of: 0.9530201342281879
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>(4, 1, 3, 2, 0) 0.9192377495462795
-Accuracy on test data: 0.9458762886597938
+<pre>Confusion Matrix on Training Data - A Perfect Score!:
+[[261   0   0   0   0]
+ [  0 227   0   0   0]
+ [  0   0 218   0   0]
+ [  0   0   0 283   0]
+ [  0   0   0   0 203]]
+
+Metrics on Test Data using Random Forest:
+Accuracy: 0.9530201342281879
+Precision: 0.9531405826843485
+Recall: 0.95296090050213
+F1 score: 0.9527587212970507
+
+Confusion Matrix on Test Data:
+[[70  0  3  1  1]
+ [ 2 43  0  1  0]
+ [ 1  0 54  1  0]
+ [ 0  0  1 62  0]
+ [ 0  2  1  0 55]]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create the K-Means model</span>
+<span class="n">kmeansModel</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="n">n_topics</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="n">randomState</span><span class="p">)</span>
+
+<span class="c1"># Fit the model and predict the categories on the training TF-IDF matrix</span>
+<span class="n">y_hatTrainSup</span> <span class="o">=</span> <span class="n">kmeansModel</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">tfidf_trainSup</span><span class="p">)</span>
+
+<span class="c1"># Determine best label order</span>
+<span class="n">labelOrder</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="n">label_permute_compare</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_hatTrainSup</span><span class="p">,</span> <span class="n">topicDict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">labelOrder</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
+
+<span class="c1"># Only predict on the test data (do not fit)</span>
+<span class="n">y_hatTestSup</span> <span class="o">=</span> <span class="n">kmeansModel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tfidf_testSup</span><span class="p">)</span>
+<span class="n">predTestSup</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">y_hatTestSup</span><span class="p">:</span>
+    <span class="n">predTestSup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">topicDict</span><span class="p">[</span><span class="n">labelOrder</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Metrics on Test Data using K-Means:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predTestSup</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precision: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predTestSup</span><span class="p">,</span> <span class="n">pos_label</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s2">&quot;macro&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recall: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predTestSup</span><span class="p">,</span> <span class="n">pos_label</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s2">&quot;macro&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F1 score: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predTestSup</span><span class="p">,</span> <span class="n">average</span> <span class="o">=</span> <span class="s2">&quot;macro&quot;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Confusion Matrix on Test Data:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predTestSup</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>(1, 2, 4, 0, 3) 0.802013422818792
+
+Metrics on Test Data using K-Means:
+Accuracy: 0.8456375838926175
+Precision: 0.879331326733592
+Recall: 0.8250799124247401
+F1 score: 0.8287236572950858
+
+Confusion Matrix on Test Data:
+[[68  0  3  0  4]
+ [ 1 23  1  3 18]
+ [ 2  0 45  1  8]
+ [ 0  0  0 62  1]
+ [ 1  0  0  3 54]]
 </pre>
 </div>
 </div>
